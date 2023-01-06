@@ -1,20 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
-export default function App() {
+import React, {Fragment} from 'react';
+import CustomCard from './component/CustomCard';
+ 
+const App = () => {
+  let firstImage = { uri: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Cones500.jpg'};
+  let secondImage = { uri: 'https://upload.wikimedia.org/wikipedia/commons/4/40/Amsterdam_(NL),_Spui_--_2015_--_7227.jpg'};
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Fragment>
+      <CustomCard url={firstImage} title={"First title"}/>
+      <CustomCard url={secondImage} title={"Second title"}/>
+    </Fragment>
   );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+};
+export default App;
